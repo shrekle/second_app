@@ -13,6 +13,8 @@ void main() {
                 Colors.deepPurple,
                 Color.fromARGB(255, 67, 18, 151),
               ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
           child: const HomeScreen(),
