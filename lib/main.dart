@@ -1,25 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:second_app/home_screen.dart';
+import 'package:second_app/quiz.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      //if crap goes sideways for no reason, remove const here
-      home: Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Colors.deepPurple,
-                Color.fromARGB(255, 67, 18, 151),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          child: const HomeScreen(),
-        ),
-      ),
-    ),
+    const Quiz(),
   );
 }
