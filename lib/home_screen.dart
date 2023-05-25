@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
 
   @override //when this has error, means i forgot the ; in the constructor
   Widget build(context) {
@@ -31,7 +33,7 @@ class HomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 40),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(
               foregroundColor: const Color.fromARGB(255, 224, 224, 250),
             ),

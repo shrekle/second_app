@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:second_app/home_screen.dart';
+import 'package:second_app/questions_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -14,6 +15,22 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
   //State<> is a generic class, you tell by the brackets<>, so you implicitly "cast it to the statefull widgets class"
+
+  Widget? activeScreen;
+
+  @override
+  void initState() {
+    activeScreen = HomeScreen(switchScreen);
+    super.initState();
+  }
+
+//when you call setState in a widget class, it reruns the build func, then it will compare the result of the previous screen with the one that it was changed to and apply them changes
+  void switchScreen() {
+    setState(() {
+      activeScreen = const QuestionsScreen();
+    });
+  }
+
   @override
   Widget build(context) {
     return MaterialApp(
@@ -30,7 +47,7 @@ class _QuizState extends State<Quiz> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: const HomeScreen(),
+          child: activeScreen,
         ),
       ),
     );
