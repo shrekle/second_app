@@ -34,6 +34,7 @@ class _QuizState extends State<Quiz> {
   @override
   Widget build(context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       //if crap goes sideways for no reason, remove const here
       home: Scaffold(
         body: Container(
